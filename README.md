@@ -1,6 +1,6 @@
 # Corkboard-API
 
-This is a RESTful API for [Corkboard](https://github.com/BrennanCallegan/Corkboard), a Summer of Coding project.
+This is a RESTful API for [Corkboard](https://github.com/BrennanCallegan/Corkboard), a Summer of Coding project in development.
 
 ## Features
 
