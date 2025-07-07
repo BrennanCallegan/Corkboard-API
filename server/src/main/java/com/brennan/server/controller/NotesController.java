@@ -5,6 +5,7 @@ import com.brennan.server.dto.NotesInfo;
 import com.brennan.server.repository.NotesRepository;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotEmpty;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -30,7 +31,7 @@ public class NotesController {
     ){}
 
     @PostMapping
-    ResponseEntity<Void> createNote(@Valid @RequestBody NotesController.CreateNotesPayload payload){
+    ResponseEntity<Notes> createNote(@Valid @RequestBody NotesController.CreateNotesPayload payload){
         var note = new Notes();
         note.setTitle(payload.title);
         note.setBody(payload.body());
@@ -39,7 +40,7 @@ public class NotesController {
         var body = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{id}")
                 .build(savedNote.getId());
-        return ResponseEntity.created(body).build();
+        return new ResponseEntity<>(savedNote, HttpStatus.CREATED);
     }
 
     @GetMapping
