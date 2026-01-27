@@ -61,8 +61,6 @@ docker ps
 ```
 **3. Database Schema Creation**
 
-Now, we'll create the necessary tables and sequences in your PostgreSQL database.
-
   1. Open IntelliJ IDEA and ensure your project is loaded.
 
   2. Open Database Navigator: In IntelliJ, open the "Database Navigator" tool window (usually on the left or right sidebar).
